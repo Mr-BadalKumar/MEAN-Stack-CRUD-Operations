@@ -5,7 +5,7 @@ FROM node:14-alpine
 WORKDIR /app
 
 # Copy the package.json and package-lock.json files to the container
-COPY package*.json .
+COPY . .
 
 # Install the dependencies
 RUN npm install
@@ -13,7 +13,7 @@ RUN npm install -g @angular/cli@15.2.6
 RUN ng config -g cli.warnings.versionMismatch false
 
 # Copy the rest of the application files to the container
-COPY . .
+
 
 # Expose port 4200 for the Angular development server
 EXPOSE 4200
