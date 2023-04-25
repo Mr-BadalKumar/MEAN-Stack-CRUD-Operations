@@ -5,13 +5,13 @@ FROM node:14
 WORKDIR /app
 
 # Copy the package.json and package-lock.json files to the container
-COPY package*.json ./
+COPY . .
 
 # Install dependencies
 RUN npm install
 
 # Copy the rest of the backend code to the container
-COPY . .
+
 
 # Expose the port used by the backend
 EXPOSE 3000
