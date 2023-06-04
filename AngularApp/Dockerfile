@@ -7,7 +7,8 @@ WORKDIR /app
 # Copy package.json and package-lock.json to the working directory
 COPY AngularApp/package*.json ./
 
-RUN apt-get update && apt-get install build-essential -y
+RUN npm install -g node-gyp
+
 
 # Install dependencies
 RUN npm install
